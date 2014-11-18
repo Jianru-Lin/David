@@ -8,7 +8,13 @@ router.get('/', function(req, res) {
 });
 
 router.post('/upload', function(req, res) {
+	console.log(req.body)
 	console.log(req.files);
+
+	if (!req.body.dir) {
+		res.end('"dir" not specified.')
+		return
+	}
 
 	if (!req.files) {
 		res.end('no files uploaded.')
@@ -24,7 +30,7 @@ router.post('/upload', function(req, res) {
 		'7z', 
 		'x', 
 		'-aoa', 
-		'"-o' + process.env.PublishRoot + '"', 
+		'"-o' + process.env.PublishRoot + '/' + req.body.dir + '/' + '"', 
 		'"' + req.files.webpage.path + '"' 
 	].join(' ')
 	
