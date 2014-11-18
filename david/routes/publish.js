@@ -7,7 +7,8 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-	console.log(req.files)
+	console.log(req.files);
+	res.end();
 })
 
 module.exports = router;
