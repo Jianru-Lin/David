@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
   res.render('publish');
 });
 
-router.post('/', function(req, res) {
+router.post('/upload', function(req, res) {
 	console.log(req.files);
 
 	if (!req.files) {

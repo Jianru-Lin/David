@@ -1,3 +1,3 @@
-set PublishRoot=%cd%\public\publish\
+set PublishRoot=%cd%\..\nginx\html\
 set DEBUG=david
 node .\bin\www
