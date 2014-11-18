@@ -23,6 +23,7 @@ router.post('/upload', function(req, res) {
 	var cmd = [
 		'7z', 
 		'x', 
+		'-aoa', 
 		'"-o' + process.env.PublishRoot + '"', 
 		'"' + req.files.webpage.path + '"' 
 	].join(' ')
@@ -31,13 +32,11 @@ router.post('/upload', function(req, res) {
 
 	exec(cmd, function(error, stdout, stderr) {
 		if (error) {
-			console.log(error)
-			res.end(error.toString())
+			res.render('publish_done', {detail: stderr})
 			return
 		}
 
-		console.log(stdout)
-		res.end(stdout)
+		res.render('publish_done', {detail: stdout})
 	})
 })
 
