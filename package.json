@@ -1,0 +1,15 @@
+{
+  "name": "David",
+  "version": "0.1.0",
+  "description": "publish your webpage in single zip file.",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.10.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jianru.lin@gmail.com",
+  "license": "ISC"
+}
