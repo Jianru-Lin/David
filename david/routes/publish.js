@@ -42,7 +42,7 @@ router.post('/upload', function(req, res) {
 			return
 		}
 
-		res.render('publish_done', {detail: stdout})
+		res.render('publish_done', {detail: stdout, index_url: '../' + req.body.dir})
 	})
 })
 
